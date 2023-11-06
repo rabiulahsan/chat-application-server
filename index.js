@@ -32,6 +32,12 @@ async function run() {
     //database collection
     const usersCollection = client.db("mychat").collection("users");
 
+//get users
+app.get('/users', async(req, res)=>{
+  const result = await usersCollection.find().toArray();
+    res.send(result);
+})
+
 
 //post users
     app.post('/users', async(req, res)=>{
