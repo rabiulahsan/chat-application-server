@@ -12,6 +12,7 @@ app.use(express.json());
 
 
 //server creation
+const http = require('http');
 const server = http.createServer(app);
 
 //coonnect localhost to socket io
@@ -21,6 +22,8 @@ const io = require('socket.io')(server, {
     methods: ["GET", "POST"],
   },
 });
+
+
 
 
 //socket io connection and code
